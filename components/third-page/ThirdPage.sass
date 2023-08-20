@@ -1,0 +1,25 @@
+.thirdPage
+    &_aboutIt
+        display: grid
+        grid-template-columns: 50% 50%
+        align-items: center
+        justify-items: end
+        @media screen and ( max-width:767px  )
+            grid-template-columns: auto
+            justify-items: normal
+        &_img
+            @media screen and ( max-width:767px  )
+                max-width: 375px
+        &_div
+            display: flex
+            flex-direction: column
+            gap: 10px
+            align-items: flex-start
+            @media screen and ( max-width:  767px)
+                align-items: center
+                
+            &_descr
+                width: 80%
+            &_country
+            &_price
+                font-size: 18px
