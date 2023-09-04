@@ -1,6 +1,10 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import "./SearchPanel.sass";
-const SearchPanel = ({ onTerm }) => {
+
+interface Props {
+	setSearch: Dispatch<SetStateAction<string>>;
+}
+const SearchPanel = ({ setSearch }: Props) => {
 	return (
 		<div className="Market_SearchAndFilter_Search">
 			<div className="Market_SearchAndFilter_Search_lookingFor">Looking for</div>
@@ -8,7 +12,7 @@ const SearchPanel = ({ onTerm }) => {
 				type="text"
 				placeholder="start typing here..."
 				className="Market_SearchAndFilter_Search_input"
-				onChange={(e) => onTerm(e)}
+				onChange={(event) => setSearch(event.target.value.toLowerCase())}
 			/>
 		</div>
 	);

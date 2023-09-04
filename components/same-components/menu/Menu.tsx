@@ -1,10 +1,14 @@
 import React from "react";
-import logoWhite from "../../../public/img/logo/logoWhite.png";
-import logoBlack from "../../../public/img/logo/logoBlack2.png";
-import { Link } from "react-router-dom";
-import "./Menu.sass";
 
-const Menu = ({ color, align}) => {
+import "./Menu.sass";
+import Link from "next/link";
+
+interface Props {
+	color: string;
+	align?: string;
+}
+
+const Menu = ({ color, align }: Props) => {
 	let className = "Menu_link_item";
 	let className2 = "Menu";
 	let className3 = "Menu_link";
@@ -16,30 +20,30 @@ const Menu = ({ color, align}) => {
 		className3 += " flex";
 	}
 	return (
-		<div className= {className2}>
+		<div className={className2}>
 			<div className="Menu_burger">
 				<span className="Menu_burger_span"></span>
 			</div>
 			<div className={className3}>
-				<Link to="/">
+				<Link href="/">
 					<img
-						src={color === "black" ? logoBlack : logoWhite}
+						src={color === "black" ? "img/logo/logoBlack2.png" : "img/logo/logoWhite.png"}
 						alt="#"
-						className={"Menu_link_item Menu_link_item_logo"}
+						className="Menu_link_item Menu_link_item_logo"
 					/>
 				</Link>
 				<Link
-					to="/thirdpage"
+					href="/thirdpage"
 					className={className}>
 					Coffee house
 				</Link>
 				<Link
-					to="/secondpage"
+					href="/secondpage"
 					className={className}>
 					Our coffee
 				</Link>
 				<Link
-					to="/fourthpage"
+					href="/fourthpage"
 					className={className}>
 					For your pleasure
 				</Link>

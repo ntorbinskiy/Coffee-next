@@ -1,11 +1,18 @@
 import React from "react";
 import Menu from "../menu/Menu";
 import "./Header.sass";
-const header = ({title,img}) => {
-	
+
+interface Props {
+	title: string;
+	img?: string;
+}
+
+const header = ({ title, img }: Props) => {
 	return (
 		<>
-			<section className="header_2" style={img ? {"backgroundImage" : `url(${img})`} : null}>
+			<section
+				className="header_2"
+				style={img ? { backgroundImage: `url(${img})` } : undefined}>
 				<Menu
 					color="white"
 					align="def"

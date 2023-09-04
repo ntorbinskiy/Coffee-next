@@ -1,6 +1,12 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import "./Buttons.sass";
-const Buttons = ({ onFilter }) => {
+import { CoffeeCountry } from "@/app/secondpage/page";
+
+interface Props {
+	onFilter: Dispatch<SetStateAction<"" | CoffeeCountry>>;
+}
+
+const Buttons = ({ onFilter }: Props) => {
 	return (
 		<div className="Market_SearchAndFilter_Filter">
 			<div className="Market_SearchAndFilter_Filter_orFilter">Or filter</div>
@@ -8,25 +14,25 @@ const Buttons = ({ onFilter }) => {
 				<button
 					type="button"
 					className="Market_SearchAndFilter_Filter_buttons_item"
-					onClick={() => onFilter(1)}>
+					onClick={() => onFilter("Brazil")}>
 					Brazil
 				</button>
 				<button
 					type="button"
 					className="Market_SearchAndFilter_Filter_buttons_item"
-					onClick={() => onFilter(2)}>
+					onClick={() => onFilter("Kenya")}>
 					Kenya
 				</button>
 				<button
 					type="button"
 					className="Market_SearchAndFilter_Filter_buttons_item"
-					onClick={() => onFilter(3)}>
+					onClick={() => onFilter("Columbia")}>
 					Columbia
 				</button>
 				<button
 					type="button"
 					className="Market_SearchAndFilter_Filter_buttons_item"
-					onClick={() => onFilter(4)}>
+					onClick={() => onFilter("")}>
 					Reset
 				</button>
 			</div>
